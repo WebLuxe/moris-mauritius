@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Heritage — Moris</title>
+<meta name="description" content="The story of Mauritius: volcanic birth, Dutch, French and British eras, independence, UNESCO heritage, the dodo, wildlife comebacks and festivals." />
+<meta name="theme-color" content="#0c2a38" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3CclipPath id='c'%3E%3Crect width='64' height='64' rx='16'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='64' height='16' fill='%23ea2839'/%3E%3Crect y='16' width='64' height='16' fill='%231a206d'/%3E%3Crect y='32' width='64' height='16' fill='%23ffd500'/%3E%3Crect y='48' width='64' height='16' fill='%2300a551'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+<link rel="stylesheet" href="css/flex.css" />
+</head>
+<body class="is-loading" data-page="heritage">
+
+<header class="nav on-media" id="nav">
+  <a href="index.html" class="nav__logo"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="5.5" rx="1.5" fill="#ea2839"/><rect x="3" y="10.5" width="26" height="5.5" fill="#1a206d"/><rect x="3" y="16" width="26" height="5.5" fill="#ffd500"/><rect x="3" y="21.5" width="26" height="5.5" rx="1.5" fill="#00a551"/></svg>Moris</a>
+  <nav class="nav__links">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="explore.html" data-nav="explore">Explore</a>
+    <a href="heritage.html" data-nav="heritage">Heritage</a>
+    <a href="experiences.html" data-nav="experiences">Experiences</a>
+    <a href="plan.html" data-nav="plan">Plan your trip</a>
+  </nav>
+  <div class="nav__tools">
+    <span class="live" data-live title="Live in Port Louis"><span data-live-time>--:--</span><span class="sep">&middot;</span><span data-live-temp></span><span data-live-wx></span></span>
+    <button class="sound" id="sound" aria-label="Toggle ocean sound" aria-pressed="false"><span><i></i><i></i><i></i><i></i></span></button>
+    <a href="plan.html#planner" class="btn btn--coral">Plan a trip</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu" id="menu">
+  <a href="index.html" data-nav="home">Home</a><a href="explore.html" data-nav="explore">Explore</a><a href="heritage.html" data-nav="heritage">Heritage</a><a href="experiences.html" data-nav="experiences">Experiences</a><a href="plan.html" data-nav="plan">Plan your trip</a>
+</nav>
+
+<main>
+  <section class="phero">
+    <div class="phero__bg"><img class="cover" src="assets/mu/img/boats-mountain.jpg" alt="Le Morne Brabant seen from the beach"></div>
+    <div class="phero__inner">
+      <div class="eyebrow">Heritage</div>
+      <h1 class="h1"><span class="split-line"><span>Eight million years</span></span><span class="split-line"><span><em>in the making.</em></span></span></h1>
+      <p class="lede">From a volcano rising out of the ocean to a nation built by people from four continents. This is the story behind the postcard.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE (pinned, horizontal) -->
+  <section class="tl" id="timeline">
+    <div class="tl__head"><div class="eyebrow">Timeline</div><h2 class="h2">How Mauritius <em>became Mauritius</em></h2></div>
+    <div class="tl__line"><i id="tlLine"></i></div>
+    <div class="tl__track" id="tlTrack">
+      <div class="era"><b>~8M</b><h3>Born of fire</h3><p>Volcanic eruptions on the ocean floor build the island roughly eight million years ago. A coral reef slowly grows around it.</p></div>
+      <div class="era"><b>1500s</b><h3>Sailors pass by</h3><p>Arab and Portuguese navigators know of the island, but it stays uninhabited, home only to birds, bats and giant tortoises.</p></div>
+      <div class="era"><b>1598</b><h3>A name arrives</h3><p>Dutch sailors land and name the island after Prince Maurice of Nassau. They later bring sugar cane and deer.</p></div>
+      <div class="era"><b>1715</b><h3>Isle de France</h3><p>The French claim the island and develop Port Louis into a busy harbour. French language and culture take deep root.</p></div>
+      <div class="era"><b>1810</b><h3>British rule</h3><p>Britain takes control during the Napoleonic Wars, but French laws, language and customs largely stay.</p></div>
+      <div class="era"><b>1835</b><h3>Abolition</h3><p>Slavery is abolished. The Le Morne mountain remains a powerful symbol of resistance and freedom.</p></div>
+      <div class="era"><b>1834–1920</b><h3>The Great Experiment</h3><p>Around half a million indentured labourers, mostly from India, arrive through Aapravasi Ghat in Port Louis.</p></div>
+      <div class="era"><b>1968</b><h3>Independence</h3><p>On 12 March, Mauritius becomes an independent nation and raises its four-band flag for the first time.</p></div>
+      <div class="era"><b>1992</b><h3>A republic</h3><p>Mauritius becomes a republic within the Commonwealth, again on 12 March, now celebrated as National Day.</p></div>
+    </div>
+  </section>
+
+  <!-- UNESCO -->
+  <section class="section">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">Recognised by the world</div><h2 class="h2">UNESCO <em>heritage</em></h2></div>
+      <p>Two World Heritage sites, plus living traditions on UNESCO's intangible heritage lists.</p>
+    </div>
+    <div class="unesco" data-reveal="stagger">
+      <article class="u"><div class="u__img"><img src="assets/mu/img/harbour-dusk.jpg" alt="Port Louis harbour at dusk" loading="lazy"><span class="u__badge">World Heritage &middot; 2006</span></div><div class="u__body"><small>Port Louis</small><h3>Aapravasi Ghat</h3><p>The immigration depot where the indentured labour system began, the first site of its kind in the world.</p></div></article>
+      <article class="u"><div class="u__img"><img src="assets/mu/img/island-aerial.jpg" alt="Le Morne peninsula from above" loading="lazy"><span class="u__badge">World Heritage &middot; 2008</span></div><div class="u__body"><small>South-west</small><h3>Le Morne Cultural Landscape</h3><p>A mountain that sheltered escaped slaves, now a symbol of the fight for freedom and human dignity.</p></div></article>
+      <article class="u u--sound"><div class="u__img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><ellipse cx="32" cy="22" rx="22" ry="8"/><path d="M10 22v20c0 4.4 9.8 8 22 8s22-3.6 22-8V22"/><path d="M18 14l-6-8M46 14l6-8"/></svg><span class="u__badge">Intangible &middot; 2014</span></div><div class="u__body"><small>Music &amp; dance</small><h3>Traditional Mauritian Sega</h3><p>Born among enslaved communities, sega mixes song, drum and dance, led by the ravanne frame drum.</p></div></article>
+      <article class="u u--song"><div class="u__img"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M24 46V14l26-6v32"/><circle cx="18" cy="46" r="6"/><circle cx="44" cy="40" r="6"/></svg><span class="u__badge">Intangible &middot; 2016</span></div><div class="u__body"><small>Song</small><h3>Geet-Gawai</h3><p>Bhojpuri wedding songs and rituals carried from India, sung by women before a wedding.</p></div></article>
+    </div>
+  </section>
+
+  <!-- DODO -->
+  <section class="section" style="background:var(--bg-2)">
+    <div class="dodo">
+      <div class="dodo__art" id="dodoArt">
+        <span class="ring"></span>
+        <!-- Original stylised dodo illustration -->
+        <svg viewBox="0 0 400 400" aria-label="Illustration of a dodo">
+          <ellipse cx="205" cy="372" rx="110" ry="12" fill="rgba(12,42,56,.12)"/>
+          <g id="dodoLegs" fill="#e3a83a"><rect x="168" y="290" width="16" height="72" rx="6"/><rect x="214" y="290" width="16" height="72" rx="6"/><path d="M150 362h44v10h-44zM206 362h44v10h-44z"/></g>
+          <path d="M300 140c34-6 52 10 46 28-14-8-28-6-38 2 18 0 30 12 26 28-16-12-32-10-40-4z" fill="#f4efe4"/>
+          <ellipse cx="210" cy="225" rx="108" ry="92" fill="#8a98a0"/>
+          <ellipse cx="225" cy="240" rx="80" ry="64" fill="#9fadb4"/>
+          <path d="M240 200c30 6 52 30 48 58-22-8-46-26-48-58z" fill="#6f7d86"/>
+          <path d="M150 170c-10-30-8-60 6-80l40 10c-6 26-4 50 10 74z" fill="#8a98a0"/>
+          <circle cx="150" cy="96" r="40" fill="#9aa8b0"/>
+          <path d="M120 82c-30-4-58 4-74 26-8 12-4 24 8 24 6-12 16-16 28-14 10 2 22-2 34-10z" fill="#e8c86a"/>
+          <path d="M46 108c-6 10-4 22 8 24 4-6 8-10 14-12-8-2-16-6-22-12z" fill="#c99a3a"/>
+          <path d="M112 86c-18 0-36 4-50 14" stroke="#c99a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="146" cy="88" r="9" fill="#fff"/><circle cx="144" cy="88" r="5" fill="#0c2a38"/>
+        </svg>
+      </div>
+      <div>
+        <div class="eyebrow">National symbol</div>
+        <h2 class="h1">The dodo, <em>forever.</em></h2>
+        <p class="lede">A large, flightless pigeon relative found only on Mauritius. It had no natural predators until humans and the animals they brought arrived. Within decades it was gone, and it became the world's best-known symbol of extinction. Today it's on the coat of arms, on souvenirs and in every Mauritian's heart.</p>
+        <div class="dodo__facts">
+          <div><b>~1 m</b><span>Tall when standing</span></div>
+          <div><b>0</b><span>Ability to fly</span></div>
+          <div><b>1662</b><span>Last widely accepted sighting</span></div>
+          <div><b>1</b><span>Place it ever lived</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMEBACKS -->
+  <section class="section is-dark">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">Back from the brink</div><h2 class="h2">The ones <em>we saved</em></h2></div>
+      <p class="muted">The dodo taught a hard lesson. Decades of conservation work have since rescued some of the rarest birds on Earth.</p>
+    </div>
+    <div class="comeback">
+      <div class="cb"><svg viewBox="0 0 64 64" fill="none" stroke="#62e3d2" stroke-width="2.5" stroke-linejoin="round"><path d="M8 34l20-6 10-14 6 10 12 2-10 6-4 12-14 4z"/><circle cx="40" cy="20" r="1.5" fill="#62e3d2"/></svg><h3>Mauritius kestrel</h3><p>Once down to just four known wild birds in the 1970s, making it one of the rarest birds in the world. Captive breeding brought it back.</p><div class="cb__meter"><i style="height:6%"></i><i style="height:18%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:82%"></i></div><small><span>1970s</span><span>Today</span></small></div>
+      <div class="cb"><svg viewBox="0 0 64 64" fill="none" stroke="#ff8fa3" stroke-width="2.5" stroke-linejoin="round"><path d="M12 38c4-12 16-18 28-16l8-6 4 4-6 6c2 10-6 20-18 20H16z"/><circle cx="46" cy="20" r="1.5" fill="#ff8fa3"/></svg><h3>Pink pigeon</h3><p>Reduced to a tiny wild population, the pink pigeon has been brought back through breeding and release programmes in the forests.</p><div class="cb__meter"><i style="height:8%"></i><i style="height:14%"></i><i style="height:35%"></i><i style="height:62%"></i><i style="height:90%"></i><i style="height:100%"></i></div><small><span>1990s</span><span>Today</span></small></div>
+      <div class="cb"><svg viewBox="0 0 64 64" fill="none" stroke="#7ee08f" stroke-width="2.5" stroke-linejoin="round"><path d="M14 44c0-14 10-24 22-24 6 0 10 4 10 8l8 2-6 4c-2 8-10 12-18 12l-10 10z"/><circle cx="40" cy="26" r="1.5" fill="#7ee08f"/></svg><h3>Echo parakeet</h3><p>Once one of the world's rarest parrots, with only a handful left, the echo parakeet now flies again in the Black River Gorges.</p><div class="cb__meter"><i style="height:5%"></i><i style="height:10%"></i><i style="height:28%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:100%"></i></div><small><span>1980s</span><span>Today</span></small></div>
+    </div>
+    <p class="note" style="color:rgba(255,255,255,.45);margin-top:24px">Bar charts are illustrative of recovery trends, not exact counts.</p>
+  </section>
+
+  <!-- STAMPS -->
+  <section class="section">
+    <div class="stamp-sec">
+      <div class="stamps" id="stamps">
+        <div class="stamp stamp--orange"><div><small>MAURITIUS</small><b>1847</b><i>one penny</i></div></div>
+        <div class="stamp stamp--blue"><div><small>MAURITIUS</small><b>1847</b><i>two pence</i></div></div>
+      </div>
+      <div data-reveal="stagger">
+        <div class="eyebrow">A tiny treasure</div>
+        <h2 class="h2" style="margin:14px 0 18px">Stamps worth <em>a fortune</em></h2>
+        <p class="lede">In 1847 Mauritius became the first British colony to issue its own postage stamps. Only a few of the original orange-red one penny and deep blue two pence stamps survive, and they rank among the rarest and most valuable stamps on Earth.</p>
+        <p class="note">Illustrations are stylised, not reproductions of the originals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FESTIVALS -->
+  <section class="section" style="padding-top:0">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">A year of celebrations</div><h2 class="h2">Every culture, <em>every holiday</em></h2></div>
+      <p>Hindu, Muslim, Christian, Chinese and Creole traditions share the calendar, and everyone joins in.</p>
+    </div>
+    <div class="fest" data-reveal="stagger">
+      <div class="fe" style="--c:var(--f-red)"><small>Jan / Feb</small><h3>Chinese Spring Festival</h3><p>Red lanterns, firecrackers and sweet wax cakes welcome the lunar new year.</p></div>
+      <div class="fe" style="--c:#4a58ff"><small>Feb / Mar</small><h3>Maha Shivaratri</h3><p>Pilgrims walk to the sacred lake of Grand Bassin carrying decorated kanwars.</p></div>
+      <div class="fe" style="--c:#e0b400"><small>12 March</small><h3>National Day</h3><p>Independence and republic day, with flags, music and parades across the island.</p></div>
+      <div class="fe" style="--c:var(--f-green)"><small>Jan / Feb</small><h3>Thaipoosam Cavadee</h3><p>A Tamil festival of devotion, with colourful processions to the temples.</p></div>
+      <div class="fe" style="--c:var(--f-red)"><small>Varies</small><h3>Eid al-Fitr</h3><p>The end of Ramadan, celebrated with prayers, family visits and shared meals.</p></div>
+      <div class="fe" style="--c:#4a58ff"><small>Oct / Nov</small><h3>Divali</h3><p>The festival of lights, when houses glow with oil lamps and sweets are shared with neighbours.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <video src="assets/mu/video/dusk.mp4" poster="assets/mu/img/v-dusk.jpg" muted loop playsinline preload="none" data-autoplay></video>
+    <div class="eyebrow">See it for yourself</div>
+    <h2 class="h1">Come for the beaches, <em>stay for the story</em></h2>
+    <a href="explore.html" class="btn btn--coral">Explore the island</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer__top">
+    <div><div class="eyebrow">Moris</div><h2 class="h2" style="margin-top:14px">A love letter <em>to Mauritius</em></h2></div>
+    <div><h4>Pages</h4><nav><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="heritage.html">Heritage</a><a href="experiences.html">Experiences</a><a href="plan.html">Plan your trip</a></nav></div>
+    <div><h4>Plan</h4><nav><a href="plan.html#when">When to go</a><a href="plan.html#essentials">Essentials</a><a href="plan.html#itineraries">Itineraries</a><a href="plan.html#planner">Trip planner</a></nav></div>
+  </div>
+  <div class="footer__big">Mauritius</div>
+  <div class="footer__row"><span>&copy; 2026 Moris. An independent, unofficial showcase. Not affiliated with the Government of Mauritius.</span><span>Photos: Unsplash &middot; Footage: Mixkit</span></div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal__box" id="modalBox"><button class="modal__close" id="modalClose" aria-label="Close">✕</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>

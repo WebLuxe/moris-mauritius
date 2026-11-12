@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Experiences — Moris</title>
+<meta name="description" content="The best things to do in Mauritius: snorkelling, hiking, waterfalls, markets, temples and Mauritian food." />
+<meta name="theme-color" content="#062d3b" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3CclipPath id='c'%3E%3Crect width='64' height='64' rx='16'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='64' height='16' fill='%23ea2839'/%3E%3Crect y='16' width='64' height='16' fill='%231a206d'/%3E%3Crect y='32' width='64' height='16' fill='%23ffd500'/%3E%3Crect y='48' width='64' height='16' fill='%2300a551'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+<link rel="stylesheet" href="css/flex.css" />
+</head>
+<body class="is-loading" data-page="experiences">
+
+<header class="nav on-media" id="nav">
+  <a href="index.html" class="nav__logo"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="5.5" rx="1.5" fill="#ea2839"/><rect x="3" y="10.5" width="26" height="5.5" fill="#1a206d"/><rect x="3" y="16" width="26" height="5.5" fill="#ffd500"/><rect x="3" y="21.5" width="26" height="5.5" rx="1.5" fill="#00a551"/></svg>Moris</a>
+  <nav class="nav__links">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="explore.html" data-nav="explore">Explore</a>
+    <a href="heritage.html" data-nav="heritage">Heritage</a>
+    <a href="experiences.html" data-nav="experiences">Experiences</a>
+    <a href="plan.html" data-nav="plan">Plan your trip</a>
+  </nav>
+  <div class="nav__tools">
+    <span class="live" data-live title="Live in Port Louis"><span data-live-time>--:--</span><span class="sep">&middot;</span><span data-live-temp></span><span data-live-wx></span></span>
+    <button class="sound" id="sound" aria-label="Toggle ocean sound" aria-pressed="false"><span><i></i><i></i><i></i><i></i></span></button>
+    <a href="plan.html#planner" class="btn btn--coral">Plan a trip</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu" id="menu">
+  <a href="index.html" data-nav="home">Home</a><a href="explore.html" data-nav="explore">Explore</a><a href="heritage.html" data-nav="heritage">Heritage</a><a href="experiences.html" data-nav="experiences">Experiences</a><a href="plan.html" data-nav="plan">Plan your trip</a>
+</nav>
+
+<main>
+  <section class="phero">
+    <div class="phero__bg"><video class="cover" src="assets/mu/video/coral.mp4" poster="assets/mu/img/v-coral.jpg" muted loop playsinline autoplay preload="auto"></video></div>
+    <div class="phero__inner">
+      <div class="eyebrow">Experiences</div>
+      <h1 class="h1"><span class="split-line"><span>Things to do,</span></span><span class="split-line"><span><em>above &amp; below.</em></span></span></h1>
+      <p class="lede">Pick a mood: get in the water, head for the hills, or eat your way around the island. Every experience here works as a half-day or day trip.</p>
+    </div>
+  </section>
+
+  <section class="section" id="things">
+    <div class="section-head">
+      <div><div class="eyebrow">Choose a category</div><h2 class="h2">What are you <em>into?</em></h2></div>
+      <div class="filters" id="expFilters">
+        <span class="filters__pill"></span>
+        <button class="is-active" data-filter="all">All</button>
+        <button data-filter="water">Water</button>
+        <button data-filter="nature">Nature</button>
+        <button data-filter="culture">Culture</button>
+        <button data-filter="food">Food</button>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card" data-type="water" data-hover-play><div class="card__media"><img src="assets/mu/img/v-reef-fish.jpg" alt=""><video src="assets/mu/video/reef-fish.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Water</span></div><div class="card__body"><h3>Snorkel Blue Bay Marine Park</h3><p>Float over coral gardens and tropical fish in a protected lagoon, straight from the beach or on a glass-bottom boat.</p><div class="card__meta"><span>Half day</span><span>South-east</span></div></div></article>
+      <article class="card" data-type="water" data-hover-play><div class="card__media"><img src="assets/mu/img/v-lagoon.jpg" alt=""><video src="assets/mu/video/lagoon.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Water</span></div><div class="card__body"><h3>Catamaran to Île aux Cerfs</h3><p>Sail across the east-coast lagoon, swim off the boat, and spend the afternoon on the island's white sand.</p><div class="card__meta"><span>Full day</span><span>East</span></div></div></article>
+      <article class="card" data-type="water" data-hover-play><div class="card__media"><img src="assets/mu/img/v-dolphins.jpg" alt=""><video src="assets/mu/video/dolphins.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Water</span></div><div class="card__body"><h3>Dolphin watching off Tamarin</h3><p>Head out early to spot wild dolphins along the west coast. Choose an operator that keeps its distance from the animals.</p><div class="card__meta"><span>Morning</span><span>West</span></div></div></article>
+      <article class="card" data-type="water" data-hover-play><div class="card__media"><img src="assets/mu/img/v-turtle.jpg" alt=""><video src="assets/mu/video/turtle.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Water</span></div><div class="card__body"><h3>Dive the outer reef</h3><p>Beyond the lagoon, the reef drops into deeper water with turtles, rays and big schools of fish. Courses suit beginners.</p><div class="card__meta"><span>Half day</span><span>All coasts</span></div></div></article>
+      <article class="card" data-type="nature" data-hover-play><div class="card__media"><img src="assets/mu/img/island-aerial.jpg" alt=""><span class="card__tag">Nature</span></div><div class="card__body"><h3>Hike Le Morne Brabant</h3><p>A steep morning hike to the summit, with sweeping views over the lagoon and the famous "underwater waterfall" reef.</p><div class="card__meta"><span>3–4 hours</span><span>South-west</span></div></div></article>
+      <article class="card" data-type="nature" data-hover-play><div class="card__media"><img src="assets/mu/img/green-valley.jpg" alt=""><span class="card__tag">Nature</span></div><div class="card__body"><h3>Chamarel's colours &amp; falls</h3><p>See the Seven Coloured Earth dunes and the tall Chamarel waterfall in one easy trip through the hills.</p><div class="card__meta"><span>Half day</span><span>South-west</span></div></div></article>
+      <article class="card" data-type="nature" data-hover-play><div class="card__media"><img src="assets/mu/img/v-jungle.jpg" alt=""><video src="assets/mu/video/jungle.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Nature</span></div><div class="card__body"><h3>Black River Gorges trails</h3><p>Walk through native forest in the national park, looking out for endemic birds and long views down the gorge.</p><div class="card__meta"><span>2–6 hours</span><span>South-west</span></div></div></article>
+      <article class="card" data-type="nature" data-hover-play><div class="card__media"><img src="assets/mu/img/v-beach.jpg" alt=""><video src="assets/mu/video/beach.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Nature</span></div><div class="card__body"><h3>Gris Gris &amp; the wild south</h3><p>Drive the southern coast road to see waves hitting the cliffs where the reef disappears. No swimming here!</p><div class="card__meta"><span>Half day</span><span>South</span></div></div></article>
+      <article class="card" data-type="culture" data-hover-play><div class="card__media"><img src="assets/mu/img/port-louis.jpg" alt=""><span class="card__tag">Culture</span></div><div class="card__body"><h3>Port Louis market &amp; waterfront</h3><p>Wander the central market for spices and street food, then visit Aapravasi Ghat and the Caudan Waterfront.</p><div class="card__meta"><span>Half day</span><span>North-west</span></div></div></article>
+      <article class="card" data-type="culture" data-hover-play><div class="card__media"><img src="assets/mu/img/mountains.jpg" alt=""><span class="card__tag">Culture</span></div><div class="card__body"><h3>Grand Bassin temples</h3><p>Visit the sacred crater lake of Ganga Talao in the hills. Dress respectfully and remove your shoes at temples.</p><div class="card__meta"><span>2 hours</span><span>Centre</span></div></div></article>
+      <article class="card" data-type="culture" data-hover-play><div class="card__media"><img src="assets/mu/img/v-dusk.jpg" alt=""><video src="assets/mu/video/dusk.mp4" muted loop playsinline preload="none" data-autoplay></video><span class="card__tag">Culture</span></div><div class="card__body"><h3>A Sega night on the beach</h3><p>Sega is the island's traditional music and dance, played on drums like the ravanne. Many hotels and beach bars host evenings.</p><div class="card__meta"><span>Evening</span><span>All coasts</span></div></div></article>
+      <article class="card" data-type="food" data-hover-play><div class="card__media"><img src="assets/mu/img/street-food.jpg" alt=""><span class="card__tag">Food</span></div><div class="card__body"><h3>A street-food crawl</h3><p>Follow the queues for dholl puri, gâteaux piments and fresh fruit with chilli salt. Cheap, fast and delicious.</p><div class="card__meta"><span>Anytime</span><span>Everywhere</span></div></div></article>
+    </div>
+  </section>
+
+  <!-- FOOD -->
+  <section class="section is-dark" id="food">
+    <div class="food">
+      <div class="food__img"><img src="assets/mu/img/street-food.jpg" alt="Street food being fried"></div>
+      <div>
+        <div class="eyebrow">Taste Mauritius</div>
+        <h2 class="h2" style="margin-top:14px">Five dishes <em>to try first</em></h2>
+        <p class="lede" style="margin-top:18px">Mauritian food mixes Indian, Creole, Chinese and French influences, often on the same plate.</p>
+        <div class="dishes">
+          <div class="dish"><b>01</b><div><h4>Dholl puri</h4><p>Soft flatbread filled with ground yellow split peas, wrapped around curry, pickles and chutney.</p></div></div>
+          <div class="dish"><b>02</b><div><h4>Gâteaux piments</h4><p>Little crispy chilli fritters made from split peas, eaten hot from the paper bag.</p></div></div>
+          <div class="dish"><b>03</b><div><h4>Rougaille</h4><p>A rich Creole tomato sauce with garlic, thyme and chilli, cooked with sausages, fish or octopus.</p></div></div>
+          <div class="dish"><b>04</b><div><h4>Mine frire</h4><p>Wok-fried noodles with vegetables and meat or seafood, a much-loved Sino-Mauritian staple.</p></div></div>
+          <div class="dish"><b>05</b><div><h4>Alouda</h4><p>A sweet, chilled milk drink with basil seeds and jelly, perfect on a hot afternoon.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <video src="assets/mu/video/beach.mp4" poster="assets/mu/img/v-beach.jpg" muted loop playsinline preload="none" data-autoplay></video>
+    <div class="eyebrow">Next</div>
+    <h2 class="h1">Put it all <em>together</em></h2>
+    <a href="plan.html" class="btn btn--coral">Plan your trip</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer__top">
+    <div><div class="eyebrow">Moris</div><h2 class="h2" style="margin-top:14px">A love letter <em>to Mauritius</em></h2></div>
+    <div><h4>Pages</h4><nav><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="heritage.html">Heritage</a><a href="experiences.html">Experiences</a><a href="plan.html">Plan your trip</a></nav></div>
+    <div><h4>Plan</h4><nav><a href="plan.html#when">When to go</a><a href="plan.html#essentials">Essentials</a><a href="plan.html#itineraries">Itineraries</a><a href="plan.html#planner">Trip planner</a></nav></div>
+  </div>
+  <div class="footer__big">Mauritius</div>
+  <div class="footer__row"><span>&copy; 2026 Moris. An independent, unofficial showcase. Not affiliated with the Government of Mauritius.</span><span>Photos: Unsplash &middot; Footage: Mixkit</span></div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal__box" id="modalBox"><button class="modal__close" id="modalClose" aria-label="Close">✕</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>

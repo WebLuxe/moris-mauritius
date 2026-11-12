@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Plan your trip — Moris</title>
+<meta name="description" content="When to visit Mauritius, travel essentials, sample itineraries and a simple trip planner." />
+<meta name="theme-color" content="#062d3b" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3CclipPath id='c'%3E%3Crect width='64' height='64' rx='16'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='64' height='16' fill='%23ea2839'/%3E%3Crect y='16' width='64' height='16' fill='%231a206d'/%3E%3Crect y='32' width='64' height='16' fill='%23ffd500'/%3E%3Crect y='48' width='64' height='16' fill='%2300a551'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+<link rel="stylesheet" href="css/flex.css" />
+</head>
+<body class="is-loading" data-page="plan">
+
+<header class="nav on-media" id="nav">
+  <a href="index.html" class="nav__logo"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="5.5" rx="1.5" fill="#ea2839"/><rect x="3" y="10.5" width="26" height="5.5" fill="#1a206d"/><rect x="3" y="16" width="26" height="5.5" fill="#ffd500"/><rect x="3" y="21.5" width="26" height="5.5" rx="1.5" fill="#00a551"/></svg>Moris</a>
+  <nav class="nav__links">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="explore.html" data-nav="explore">Explore</a>
+    <a href="heritage.html" data-nav="heritage">Heritage</a>
+    <a href="experiences.html" data-nav="experiences">Experiences</a>
+    <a href="plan.html" data-nav="plan">Plan your trip</a>
+  </nav>
+  <div class="nav__tools">
+    <span class="live" data-live title="Live in Port Louis"><span data-live-time>--:--</span><span class="sep">&middot;</span><span data-live-temp></span><span data-live-wx></span></span>
+    <button class="sound" id="sound" aria-label="Toggle ocean sound" aria-pressed="false"><span><i></i><i></i><i></i><i></i></span></button>
+    <a href="plan.html#planner" class="btn btn--coral">Plan a trip</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu" id="menu">
+  <a href="index.html" data-nav="home">Home</a><a href="explore.html" data-nav="explore">Explore</a><a href="heritage.html" data-nav="heritage">Heritage</a><a href="experiences.html" data-nav="experiences">Experiences</a><a href="plan.html" data-nav="plan">Plan your trip</a>
+</nav>
+
+<main>
+  <section class="phero">
+    <div class="phero__bg"><img class="cover" src="assets/mu/img/golden-palms.jpg" alt="Palm-lined beach"></div>
+    <div class="phero__inner">
+      <div class="eyebrow">Plan your trip</div>
+      <h1 class="h1"><span class="split-line"><span>Everything you</span></span><span class="split-line"><span><em>need to know.</em></span></span></h1>
+      <p class="lede">When to go, what to pack, how to get around, and a few ready-made itineraries. Then tell us what you like and we'll help shape your trip.</p>
+    </div>
+  </section>
+
+  <!-- WHEN TO GO -->
+  <section class="section" id="when">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">When to go</div><h2 class="h2">Warm <em>all year</em></h2></div>
+      <p>Mauritius has two seasons. There's no bad time to visit, but each one suits different plans.</p>
+    </div>
+    <div class="months">
+      <div class="month summer cyclone"><b>Jan</b><span class="temp">30°</span><small>Hot, humid</small><i class="month__bar"></i></div>
+      <div class="month summer cyclone"><b>Feb</b><span class="temp">30°</span><small>Hot, humid</small><i class="month__bar"></i></div>
+      <div class="month summer cyclone"><b>Mar</b><span class="temp">30°</span><small>Hot</small><i class="month__bar"></i></div>
+      <div class="month summer"><b>Apr</b><span class="temp">29°</span><small>Warm</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>May</b><span class="temp">27°</span><small>Mild, dry</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>Jun</b><span class="temp">25°</span><small>Mild</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>Jul</b><span class="temp">24°</span><small>Coolest</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>Aug</b><span class="temp">24°</span><small>Breezy</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>Sep</b><span class="temp">25°</span><small>Dry, sunny</small><i class="month__bar"></i></div>
+      <div class="month winter"><b>Oct</b><span class="temp">27°</span><small>Dry, sunny</small><i class="month__bar"></i></div>
+      <div class="month summer"><b>Nov</b><span class="temp">28°</span><small>Warm</small><i class="month__bar"></i></div>
+      <div class="month summer"><b>Dec</b><span class="temp">29°</span><small>Hot</small><i class="month__bar"></i></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--coral)"></i>Summer (Nov–Apr)</span><span><i style="background:var(--lagoon)"></i>Winter (May–Oct)</span><span>Average coastal highs, approximate</span></div>
+    <div class="seasons">
+      <div class="season"><div class="eyebrow" style="color:var(--coral)">Summer &middot; Nov–Apr</div><h3>Hot beach days</h3><p>The warmest sea and the best snorkelling, with short tropical showers. January to March is cyclone season, so book flexible plans and check forecasts.</p></div>
+      <div class="season"><div class="eyebrow">Winter &middot; May–Oct</div><h3>Hiking &amp; exploring</h3><p>Cooler, drier and breezier, which makes it ideal for hikes and road trips. September and October are a sweet spot of sunshine and pleasant temperatures.</p></div>
+    </div>
+  </section>
+
+  <!-- ESSENTIALS -->
+  <section class="section is-dark" id="essentials">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">Essentials</div><h2 class="h2">Good <em>to know</em></h2></div>
+      <p class="muted">The practical stuff, at a glance.</p>
+    </div>
+    <div class="essentials">
+      <div class="ess"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h4.5a2 2 0 010 4H10a2 2 0 000 4h5M12 6v2M12 16v2"/></svg><h4>Currency</h4><p>Mauritian rupee (MUR)</p><small>Cards are widely accepted in towns and hotels. Carry cash for markets and street food.</small></div>
+      <div class="ess"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><h4>Languages</h4><p>English, French &amp; Kreol</p><small>English is the official language. French and Mauritian Kreol are spoken everywhere.</small></div>
+      <div class="ess"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Time zone</h4><p>UTC+4</p><small>No daylight saving, so the time difference changes with your home country's seasons.</small></div>
+      <div class="ess"><svg viewBox="0 0 24 24"><path d="M3 13l2-5h14l2 5v5H3z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg><h4>Getting around</h4><p>Drive on the left</p><small>Renting a car gives the most freedom. Taxis are easy to find, and buses and the Metro Express connect the main towns.</small></div>
+      <div class="ess"><svg viewBox="0 0 24 24"><path d="M2 16l20-8-6 12-3-5z"/></svg><h4>Arriving</h4><p>One international airport</p><small>Flights land at SSR International in the south-east, about an hour from most resorts.</small></div>
+      <div class="ess"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 4v4M15 4v4M9 14h6"/></svg><h4>Entry</h4><p>Check your passport</p><small>Many nationalities can visit visa-free for short stays. Always check the current official requirements before you book.</small></div>
+    </div>
+  </section>
+
+  <!-- ITINERARIES -->
+  <section class="section" id="itineraries">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">Itineraries</div><h2 class="h2">Ready-made <em>routes</em></h2></div>
+      <p>Pick a trip length and borrow the plan. Swap days around to suit where you're staying.</p>
+    </div>
+    <div class="filters tabs" id="itinTabs">
+      <span class="filters__pill"></span>
+      <button class="is-active" data-target="itin5">5 days</button>
+      <button data-target="itin7">7 days</button>
+      <button data-target="itin10">10 days</button>
+    </div>
+    <div class="itin is-active" id="itin5">
+      <div class="day"><b>Day 1</b><div><h4>Arrive &amp; unwind</h4><p>Settle in, swim in the lagoon and watch your first sunset.</p></div></div>
+      <div class="day"><b>Day 2</b><div><h4>South-west loop</h4><p>Chamarel's coloured earth and waterfall, then the Black River Gorges viewpoint.</p></div></div>
+      <div class="day"><b>Day 3</b><div><h4>Island day</h4><p>Catamaran to Île aux Cerfs with snorkelling stops along the way.</p></div></div>
+      <div class="day"><b>Day 4</b><div><h4>Capital &amp; north</h4><p>Port Louis market in the morning, Pamplemousses garden after lunch, sunset at Cap Malheureux.</p></div></div>
+      <div class="day"><b>Day 5</b><div><h4>Beach &amp; goodbye</h4><p>A slow morning on the sand and one last dholl puri before your flight.</p></div></div>
+    </div>
+    <div class="itin" id="itin7">
+      <div class="day"><b>Day 1</b><div><h4>Arrive &amp; unwind</h4><p>Check in, swim and rest after the flight.</p></div></div>
+      <div class="day"><b>Day 2</b><div><h4>Le Morne</h4><p>Early hike up Le Morne, then an afternoon on the lagoon below.</p></div></div>
+      <div class="day"><b>Day 3</b><div><h4>Chamarel &amp; the gorges</h4><p>Coloured earth, waterfalls and forest trails in the south-west hills.</p></div></div>
+      <div class="day"><b>Day 4</b><div><h4>Wild south</h4><p>Gris Gris cliffs, the Maconde viewpoint and Grand Bassin on the way back.</p></div></div>
+      <div class="day"><b>Day 5</b><div><h4>East-coast islands</h4><p>Catamaran day to Île aux Cerfs, with time on the beach.</p></div></div>
+      <div class="day"><b>Day 6</b><div><h4>Port Louis &amp; the north</h4><p>Market, waterfront, botanical garden and a sunset in Grand Baie.</p></div></div>
+      <div class="day"><b>Day 7</b><div><h4>Snorkel &amp; fly</h4><p>Morning snorkel in Blue Bay, close to the airport, before departure.</p></div></div>
+    </div>
+    <div class="itin" id="itin10">
+      <div class="day"><b>Days 1–2</b><div><h4>Settle in on the west coast</h4><p>Beaches at Flic en Flac or Tamarin and an early dolphin-watching trip.</p></div></div>
+      <div class="day"><b>Days 3–4</b><div><h4>Mountains &amp; waterfalls</h4><p>Hike Le Morne, explore Chamarel, and walk the Black River Gorges.</p></div></div>
+      <div class="day"><b>Day 5</b><div><h4>The wild south</h4><p>Coastal road to Gris Gris, tea country and Grand Bassin.</p></div></div>
+      <div class="day"><b>Days 6–7</b><div><h4>Move to the east</h4><p>Lagoon days, Île aux Cerfs and kayaking in the mangroves.</p></div></div>
+      <div class="day"><b>Day 8</b><div><h4>Under the sea</h4><p>A dive or snorkel trip on the outer reef.</p></div></div>
+      <div class="day"><b>Day 9</b><div><h4>Capital &amp; north</h4><p>Port Louis, Pamplemousses and a boat trip to the northern islets.</p></div></div>
+      <div class="day"><b>Day 10</b><div><h4>Slow goodbye</h4><p>A last swim, souvenir shopping and the drive to the airport.</p></div></div>
+    </div>
+  </section>
+
+  <!-- PLANNER -->
+  <section class="section" id="planner" style="padding-top:0">
+    <div class="planner">
+      <div data-reveal="stagger">
+        <div class="eyebrow">Trip planner</div>
+        <h2 class="h2" style="margin:14px 0 18px">Tell us <em>what you love</em></h2>
+        <p class="lede">Choose your dates and interests and we'll put together a suggested plan. This is a demo form: connect it to your email or booking tool to make it live.</p>
+      </div>
+      <form class="form" novalidate>
+        <div class="row">
+          <label>Your name<input name="name" type="text" placeholder="Alex" autocomplete="given-name"></label>
+          <label>Email<input name="email" type="email" placeholder="you@example.com" required autocomplete="email"></label>
+        </div>
+        <div class="row">
+          <label>Arriving<input name="from" type="date"></label>
+          <label>Travellers<select name="people"><option>1</option><option selected>2</option><option>3–4</option><option>5+</option></select></label>
+        </div>
+        <label>Interests</label>
+        <div class="chips">
+          <button type="button" class="chip is-on">Beaches</button>
+          <button type="button" class="chip">Snorkelling &amp; diving</button>
+          <button type="button" class="chip">Hiking</button>
+          <button type="button" class="chip">Food</button>
+          <button type="button" class="chip">Culture</button>
+          <button type="button" class="chip">Honeymoon</button>
+          <button type="button" class="chip">Family</button>
+        </div>
+        <button class="btn btn--lagoon" type="submit" style="margin-top:8px">Get my plan</button>
+        <div class="form__done">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l3.2 3L17 9"/></svg>
+          <h3 id="doneName">Thanks!</h3>
+          <p>We've got your details. In a live version, a suggested itinerary would land in your inbox shortly.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0">
+    <div class="section-head" data-reveal="stagger" style="justify-content:center;text-align:center">
+      <div><div class="eyebrow">Questions</div><h2 class="h2">Quick <em>answers</em></h2></div>
+    </div>
+    <div class="faq">
+      <div class="faq__item"><button class="faq__q">How many days do I need?<i></i></button><div class="faq__a"><p>A week lets you see the highlights without rushing. With 10 days or more you can split your stay between two coasts, for example west for sunsets and east for lagoons.</p></div></div>
+      <div class="faq__item"><button class="faq__q">Which coast should I stay on?<i></i></button><div class="faq__a"><p>North for restaurants and nightlife, west for sunsets and calm water, east for wide lagoons and a cooler breeze, and south for wild scenery and quiet.</p></div></div>
+      <div class="faq__item"><button class="faq__q">Is it safe to swim everywhere?<i></i></button><div class="faq__a"><p>Inside the reef, lagoons are generally calm, but always follow local flags and advice. Avoid swimming on the reef-less south coast and around river mouths after heavy rain.</p></div></div>
+      <div class="faq__item"><button class="faq__q">Do I need to rent a car?<i></i></button><div class="faq__a"><p>It isn't essential, as taxis and tours cover most sights, but a car makes day trips much easier. Remember that traffic drives on the left.</p></div></div>
+      <div class="faq__item"><button class="faq__q">What should I pack?<i></i></button><div class="faq__a"><p>Light clothes, reef-safe sunscreen, a hat, water shoes for rocky beaches, a light rain jacket, and something modest to cover shoulders and knees when visiting temples.</p></div></div>
+    </div>
+    <p class="note" style="text-align:center">Information is a general guide. Check official sources for entry rules, weather warnings and opening times before you travel.</p>
+  </section>
+
+  <section class="cta">
+    <video src="assets/mu/video/island.mp4" poster="assets/mu/img/v-island.jpg" muted loop playsinline preload="none" data-autoplay></video>
+    <div class="eyebrow">Bon voyage</div>
+    <h2 class="h1">See you <em>on the island</em></h2>
+    <a href="explore.html" class="btn btn--coral">Explore the map</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer__top">
+    <div><div class="eyebrow">Moris</div><h2 class="h2" style="margin-top:14px">A love letter <em>to Mauritius</em></h2></div>
+    <div><h4>Pages</h4><nav><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="heritage.html">Heritage</a><a href="experiences.html">Experiences</a><a href="plan.html">Plan your trip</a></nav></div>
+    <div><h4>Plan</h4><nav><a href="plan.html#when">When to go</a><a href="plan.html#essentials">Essentials</a><a href="plan.html#itineraries">Itineraries</a><a href="plan.html#planner">Trip planner</a></nav></div>
+  </div>
+  <div class="footer__big">Mauritius</div>
+  <div class="footer__row"><span>&copy; 2026 Moris. An independent, unofficial showcase. Not affiliated with the Government of Mauritius.</span><span>Photos: Unsplash &middot; Footage: Mixkit</span></div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal__box" id="modalBox"><button class="modal__close" id="modalClose" aria-label="Close">✕</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>

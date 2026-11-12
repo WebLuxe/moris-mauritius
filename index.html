@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Mauritius — Moris</title>
+<meta name="description" content="Mauritius, shown off properly: a dive from orbit, a 3D flyover of the real coastline, the dodo, four flag colours and an island that punches far above its size." />
+<meta name="theme-color" content="#062d3b" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3CclipPath id='c'%3E%3Crect width='64' height='64' rx='16'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='64' height='16' fill='%23ea2839'/%3E%3Crect y='16' width='64' height='16' fill='%231a206d'/%3E%3Crect y='32' width='64' height='16' fill='%23ffd500'/%3E%3Crect y='48' width='64' height='16' fill='%2300a551'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/mu/tex/earth.jpg" crossorigin="anonymous" />
+<link rel="stylesheet" href="css/site.css" />
+<link rel="stylesheet" href="css/flex.css" />
+</head>
+<body class="is-loading" data-page="home">
+
+<!-- INTRO: dive from orbit -->
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas id="introCanvas"></canvas>
+  <div class="intro__hud">
+    <div class="intro__frame"></div>
+    <div class="intro__tl">Moris / orbital approach<br>Target <b>Mauritius</b><br>Lat <b id="introLat">00°00′N</b> &nbsp;Lon <b id="introLon">000°00′E</b></div>
+    <div class="intro__tr">Altitude <b id="introAlt">35,786</b> km<br>Indian Ocean<br><span id="introStatus">Acquiring signal</span></div>
+    <div class="intro__reticle" id="introReticle"></div>
+    <div class="intro__title" id="introTitle"><span>M</span><span>A</span><span>U</span><span>R</span><span>I</span><span>T</span><span>I</span><span>U</span><span>S</span></div>
+    <div class="intro__bl">Loading <b id="introPct">0%</b></div>
+    <div class="intro__bar"><i id="introBar"></i></div>
+    <button class="intro__skip" id="introSkip">Skip intro →</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav on-media" id="nav">
+  <a href="index.html" class="nav__logo"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="5.5" rx="1.5" fill="#ea2839"/><rect x="3" y="10.5" width="26" height="5.5" fill="#1a206d"/><rect x="3" y="16" width="26" height="5.5" fill="#ffd500"/><rect x="3" y="21.5" width="26" height="5.5" rx="1.5" fill="#00a551"/></svg>Moris</a>
+  <nav class="nav__links">
+    <a href="index.html" data-nav="home">Home</a>
+    <a href="explore.html" data-nav="explore">Explore</a>
+    <a href="heritage.html" data-nav="heritage">Heritage</a>
+    <a href="experiences.html" data-nav="experiences">Experiences</a>
+    <a href="plan.html" data-nav="plan">Plan</a>
+  </nav>
+  <div class="nav__tools">
+    <span class="live" data-live title="Live in Port Louis"><span data-live-time>--:--</span><span class="sep">·</span><span data-live-temp></span><span data-live-wx></span></span>
+    <button class="sound" id="sound" aria-label="Toggle ocean sound" aria-pressed="false"><span><i></i><i></i><i></i><i></i></span></button>
+    <a href="plan.html#planner" class="btn btn--coral">Plan a trip</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu" id="menu">
+  <a href="index.html" data-nav="home">Home</a><a href="explore.html" data-nav="explore">Explore</a><a href="heritage.html" data-nav="heritage">Heritage</a><a href="experiences.html" data-nav="experiences">Experiences</a><a href="plan.html" data-nav="plan">Plan</a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__media" id="heroMedia">
+      <video class="cover" id="heroVideo" data-src="assets/mu/video/lagoon.mp4" poster="assets/mu/img/v-lagoon.jpg" muted loop playsinline autoplay preload="auto"></video>
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__top" id="heroTop">
+      <div>20°17′S · 57°33′E<br>Indian Ocean</div>
+      <div style="text-align:right">Port Louis now <b data-live><span data-live-time>--:--</span></b><br>Independent since 1968</div>
+    </div>
+    <div class="hero__sticker sticker" id="heroSticker">
+      <svg viewBox="0 0 120 120"><defs><path id="stk" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text><textPath href="#stk">Mauritius · Île Maurice · Moris · 1968 ·</textPath></text><g transform="translate(43 47)"><rect width="34" height="6.5" fill="#ea2839"/><rect y="6.5" width="34" height="6.5" fill="#1a206d"/><rect y="13" width="34" height="6.5" fill="#ffd500"/><rect y="19.5" width="34" height="6.5" fill="#00a551"/></g></svg>
+    </div>
+    <h1 class="hero__word" id="heroWord" aria-label="Mauritius"><span>M</span><span>A</span><span>U</span><span>R</span><span>I</span><span>T</span><span>I</span><span>U</span><span>S</span></h1>
+    <div class="hero__bottom on-media" id="heroBottom">
+      <p>A volcanic island in the Indian Ocean: turquoise lagoons, basalt peaks, the dodo, and a culture built from four continents. Scroll to fly over it.</p>
+      <div class="hero__btns">
+        <a href="explore.html" class="btn btn--coral">Explore the island</a>
+        <a href="heritage.html" class="btn btn--ghost">The story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GREETINGS -->
+  <div class="greet" aria-label="Greetings in languages spoken in Mauritius">
+    <div class="greet__track" id="greet">
+      <span>Bonzour <small>Kreol</small></span><span>Bonjour <small>French</small></span><span>Hello <small>English</small></span><span>Namaste <small>Hindi</small></span><span>Ni hao <small>Mandarin</small></span><span>Salaam <small>Urdu</small></span><span>Vanakkam <small>Tamil</small></span>
+      <span>Bonzour <small>Kreol</small></span><span>Bonjour <small>French</small></span><span>Hello <small>English</small></span><span>Namaste <small>Hindi</small></span><span>Ni hao <small>Mandarin</small></span><span>Salaam <small>Urdu</small></span><span>Vanakkam <small>Tamil</small></span>
+    </div>
+  </div>
+
+  <!-- PHOTO RIBBONS -->
+  <section class="ribbons" id="ribbons" aria-label="Photos of Mauritius">
+    <div class="ribbon" id="ribbonA">
+      <figure><img src="assets/mu/img/le-morne.jpg" alt="The reef off Le Morne from above" loading="lazy"><figcaption>Le Morne · reef</figcaption></figure>
+      <figure><img src="assets/mu/img/golden-palms.jpg" alt="Palm-lined beach" loading="lazy"><figcaption>West coast</figcaption></figure>
+      <figure><img src="assets/mu/img/green-valley.jpg" alt="Seven Coloured Earth" loading="lazy"><figcaption>Chamarel</figcaption></figure>
+      <figure><img src="assets/mu/img/red-boat.jpg" alt="Boat in the lagoon" loading="lazy"><figcaption>Blue Bay</figcaption></figure>
+      <figure><img src="assets/mu/img/maconde.jpg" alt="South coast from above" loading="lazy"><figcaption>Maconde</figcaption></figure>
+      <figure><img src="assets/mu/img/tall-waterfall.jpg" alt="Waterfall" loading="lazy"><figcaption>Chamarel falls</figcaption></figure>
+      <figure><img src="assets/mu/img/flic-en-flac.jpg" alt="Beach from above" loading="lazy"><figcaption>Flic en Flac</figcaption></figure>
+      <figure><img src="assets/mu/img/cap-church.jpg" alt="Red-roofed chapel" loading="lazy"><figcaption>Cap Malheureux</figcaption></figure>
+    </div>
+    <div class="ribbon" id="ribbonB">
+      <figure><img src="assets/mu/img/port-louis-harbour.jpg" alt="Port Louis bay" loading="lazy"><figcaption>Port Louis</figcaption></figure>
+      <figure><img src="assets/mu/img/island-aerial.jpg" alt="Le Morne peninsula" loading="lazy"><figcaption>Le Morne</figcaption></figure>
+      <figure><img src="assets/mu/img/street-food.jpg" alt="Street food" loading="lazy"><figcaption>Street food</figcaption></figure>
+      <figure><img src="assets/mu/img/palm-beach.jpg" alt="White sand" loading="lazy"><figcaption>East lagoon</figcaption></figure>
+      <figure><img src="assets/mu/img/volcanic-rocks.jpg" alt="Black volcanic rocks" loading="lazy"><figcaption>Gris Gris</figcaption></figure>
+      <figure><img src="assets/mu/img/mountains.jpg" alt="Mountains" loading="lazy"><figcaption>Central range</figcaption></figure>
+      <figure><img src="assets/mu/img/gunners-quoin.jpg" alt="Northern beach" loading="lazy"><figcaption>Grand Baie</figcaption></figure>
+      <figure><img src="assets/mu/img/palm-reflection.jpg" alt="Palms reflected" loading="lazy"><figcaption>North</figcaption></figure>
+    </div>
+    <div class="ribbons__title"><span>Field notes from the island</span></div>
+  </section>
+
+  <!-- THE REEL: full-screen footage, each clip bursts open from a circle -->
+  <section class="reel" id="reel">
+    <div class="reel__slide" style="--len:6"><div class="reel__mask"><video src="assets/mu/video/lagoon.mp4" poster="assets/mu/img/v-lagoon.jpg" muted loop playsinline preload="none"></video></div><h2 class="reel__word">Lagoon</h2><span class="reel__meta">01 · turquoise inside the reef</span></div>
+    <div class="reel__slide" style="--len:5"><div class="reel__mask"><video src="assets/mu/video/coral.mp4" poster="assets/mu/img/v-coral.jpg" muted loop playsinline preload="none"></video></div><h2 class="reel__word">Coral</h2><span class="reel__meta">02 · gardens under the surface</span></div>
+    <div class="reel__slide" style="--len:7"><div class="reel__mask"><video src="assets/mu/video/turtle.mp4" poster="assets/mu/img/v-turtle.jpg" muted loop playsinline preload="none"></video></div><h2 class="reel__word">Turtles</h2><span class="reel__meta">03 · grazing the seagrass</span></div>
+    <div class="reel__slide" style="--len:10"><div class="reel__mask"><video src="assets/mu/video/waterfall.mp4" poster="assets/mu/img/v-waterfall.jpg" muted loop playsinline preload="none"></video></div><h2 class="reel__word">Waterfalls</h2><span class="reel__meta">04 · deep in the gorges</span></div>
+    <div class="reel__slide" style="--len:6"><div class="reel__mask"><video src="assets/mu/video/dusk.mp4" poster="assets/mu/img/v-dusk.jpg" muted loop playsinline preload="none"></video></div><h2 class="reel__word">Sunset</h2><span class="reel__meta">05 · every evening, west coast</span></div>
+    <div class="reel__count" id="reelCount">01 / 05</div>
+  </section>
+
+  <!-- 3D ISLAND FLYOVER (real coastline) -->
+  <section class="island3d" id="island3d">
+    <div class="island3d__fallback"></div>
+    <canvas id="islandCanvas"></canvas>
+    <div class="island3d__shade"></div>
+    <div class="hud">
+      <div class="hud__tl">Flyover · real coastline<br>Looking at <b id="hudPlace">Mauritius</b><br><span id="hudCoord">20°17′S 57°33′E</span></div>
+      <div class="hud__tr">Scene <b id="hudScene">01</b> / 03<div class="hud__steps"><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
+    </div>
+    <div class="island3d__cap" data-cap>
+      <div class="eyebrow">01 · the reef</div>
+      <h2 class="h2">Ringed in <em>coral</em></h2>
+      <p>A reef wraps almost the whole island, keeping the lagoons inside calm, shallow and impossibly turquoise. Only the wild south coast goes without.</p>
+    </div>
+    <div class="island3d__cap island3d__cap--r" data-cap>
+      <div class="eyebrow">02 · Le Morne Brabant</div>
+      <h2 class="h2">556 metres of <em>basalt</em></h2>
+      <p>The south-west's famous monolith: UNESCO World Heritage, symbol of freedom, and the island's most photographed view.</p>
+    </div>
+    <div class="island3d__cap" data-cap>
+      <div class="eyebrow">03 · golden hour</div>
+      <h2 class="h2">Then the sky <em>turns gold</em></h2>
+      <p><a href="explore.html" class="link" style="color:#fff">Find your sunset spot <span>→</span></a></p>
+    </div>
+  </section>
+
+  <!-- PARTICLE MORPH -->
+  <section class="morph" id="morph">
+    <div class="morph__fallback">Mauritius</div>
+    <canvas id="morphCanvas"></canvas>
+    <div class="morph__idx" id="morphIdx">01 / 04</div>
+    <div class="morph__cap" data-mcap><div class="eyebrow">Say it with us</div><h2 class="h2">Moris. Maurice. <em>Mauritius.</em></h2><p>Three names, one island. Drag your finger or cursor through the particles.</p></div>
+    <div class="morph__cap" data-mcap><div class="eyebrow">The real outline</div><h2 class="h2">2,040 km² <em>of island</em></h2><p>Traced from real coastline data: about 65 km from north to south and 45 km across.</p></div>
+    <div class="morph__cap" data-mcap><div class="eyebrow">The legend</div><h2 class="h2">Home of <em>the dodo</em></h2><p>Found nowhere else on Earth, gone since the late 1600s, and still the island's most famous symbol.</p></div>
+    <div class="morph__cap" data-mcap><div class="eyebrow">The flag</div><h2 class="h2">Four bands, <em>one nation</em></h2><p>Red for the struggle for freedom, blue for the Indian Ocean, yellow for the light of independence and green for the evergreen land.</p></div>
+  </section>
+
+  <!-- GLOBE -->
+  <section class="globe" id="globe">
+    <div class="globe__stage" id="globeStage"><canvas id="globeCanvas"></canvas></div>
+    <div class="globe__text">
+      <div class="eyebrow">Where in the world</div>
+      <h2 class="h2">A dot on the map, <em>a crossroads</em> of the world</h2>
+      <p class="lede">Halfway between Africa, Asia and Australia, and closer than you think.</p>
+      <div class="routes">
+        <div class="route" data-city="reunion"><div><b>Réunion</b><small>Closest neighbour</small></div><span>~45 min</span></div>
+        <div class="route" data-city="johannesburg"><div><b>Johannesburg</b><small>South Africa</small></div><span>~4 h</span></div>
+        <div class="route" data-city="mumbai"><div><b>Mumbai</b><small>India</small></div><span>~6 h</span></div>
+        <div class="route" data-city="dubai"><div><b>Dubai</b><small>UAE</small></div><span>~6.5 h</span></div>
+        <div class="route" data-city="paris"><div><b>Paris</b><small>France</small></div><span>~11 h</span></div>
+        <div class="route" data-city="london"><div><b>London</b><small>United Kingdom</small></div><span>~12 h</span></div>
+      </div>
+      <p class="note" style="color:rgba(255,255,255,.45)">Approximate direct flight times.</p>
+    </div>
+  </section>
+
+  <!-- POSTCARDS (pinned deck) -->
+  <section class="deck" id="deck">
+    <div class="deck__head"><div><div class="eyebrow">Postcards</div><h2 class="h2" style="margin-top:12px">Wish you <em>were here</em></h2></div><div class="deck__count" id="deckCount">01 / 06</div></div>
+    <article class="pc"><div class="pc__img"><img src="assets/mu/img/beach-mountain.jpg" alt="Le Morne Brabant" loading="lazy"></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Le Morne<br>Mauritius<br>2026</div><div><h3>Le Morne Brabant</h3><p>Hike it at dawn. The view over the reef is worth every step.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>South-west</span><a class="link" href="explore.html#le-morne">Map →</a></div></div></article>
+    <article class="pc"><div class="pc__img"><img src="assets/mu/img/green-valley.jpg" alt="Seven Coloured Earth" loading="lazy"></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Chamarel<br>Mauritius<br>2026</div><div><h3>Seven Coloured Earth</h3><p>Volcanic dunes in red, violet and ochre that never wash away.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>South-west</span><a class="link" href="explore.html#chamarel">Map →</a></div></div></article>
+    <article class="pc"><div class="pc__img"><video src="assets/mu/video/lagoon.mp4" poster="assets/mu/img/v-lagoon.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Waves rolling onto white sand"></video></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Île aux Cerfs<br>Mauritius<br>2026</div><div><h3>Île aux Cerfs</h3><p>Take the boat across the east lagoon and lose an afternoon.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>East</span><a class="link" href="explore.html#ile-aux-cerfs">Map →</a></div></div></article>
+    <article class="pc"><div class="pc__img"><video src="assets/mu/video/waterfall.mp4" poster="assets/mu/img/v-waterfall.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Waterfall in the forest"></video></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Gorges<br>Mauritius<br>2026</div><div><h3>Black River Gorges</h3><p>Rainforest, waterfalls and birds found nowhere else.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>South-west</span><a class="link" href="explore.html#black-river">Map →</a></div></div></article>
+    <article class="pc"><div class="pc__img"><img src="assets/mu/img/port-louis-harbour.jpg" alt="Port Louis bay" loading="lazy"></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Port Louis<br>Mauritius<br>2026</div><div><h3>Port Louis</h3><p>Spices at the market, history at Aapravasi Ghat, mountains behind.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>North-west</span><a class="link" href="explore.html#port-louis">Map →</a></div></div></article>
+    <article class="pc"><div class="pc__img"><img src="assets/mu/img/cap-church.jpg" alt="Red-roofed chapel by the sea" loading="lazy"></div><div class="pc__back"><div class="pc__stamp">MRU<br>Rs 25</div><div class="pc__mark">Cap<br>Malheureux<br>2026</div><div><h3>Cap Malheureux</h3><p>A red roof, a blue lagoon and the northern islets on the horizon.</p><div class="pc__lines"><i></i><i></i><i></i></div></div><div class="pc__foot"><span>North</span><a class="link" href="explore.html#cap-malheureux">Map →</a></div></div></article>
+  </section>
+
+  <!-- LEDGER -->
+  <section class="section">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">The ledger</div><h2 class="h2">Small island, <em>long list</em></h2></div>
+      <p>You can drive across Mauritius in about an hour. The bragging rights take longer.</p>
+    </div>
+    <div class="ledger">
+      <div class="row"><b data-count="2" data-suffix="M+">0</b><div><small>Ocean territory</small><h3>km² of sea</h3></div><p>Its exclusive economic zone is roughly a thousand times larger than the island itself.</p></div>
+      <div class="row"><b data-count="828" data-suffix=" m">0</b><div><small>Highest point</small><h3>Black River Peak</h3></div><p>Piton de la Petite Rivière Noire, rising above the gorges in the south-west.</p></div>
+      <div class="row"><b data-count="2">0</b><div><small>UNESCO</small><h3>World Heritage sites</h3></div><p>Aapravasi Ghat in Port Louis and the Le Morne Cultural Landscape.</p></div>
+      <div class="row"><b data-count="1847" data-plain>0</b><div><small>Philately</small><h3>Legendary stamps</h3></div><p>The first British colony to issue its own stamps. The survivors are among the rarest on Earth.</p></div>
+      <div class="row"><b data-count="4">0</b><div><small>Conservation</small><h3>kestrels left</h3></div><p>The Mauritius kestrel was down to four known wild birds in the 1970s. It was brought back.</p></div>
+      <div class="row"><b data-count="1968" data-plain>0</b><div><small>Independence</small><h3>Four bands raised</h3></div><div><p>Red, blue, yellow and green, celebrated every 12 March.</p><div class="flagbar"><i style="background:var(--f-red)"></i><i style="background:var(--f-blue)"></i><i style="background:var(--f-yellow)"></i><i style="background:var(--f-green)"></i></div></div></div>
+    </div>
+  </section>
+
+  <!-- QUOTE (Mark Twain, Following the Equator, 1897; public domain) -->
+  <section class="quote">
+    <div class="eyebrow">Overheard, 1897</div>
+    <blockquote id="quote">"Mauritius was made first, and then heaven; and that heaven was copied after Mauritius."</blockquote>
+    <cite>Mark Twain, quoting a proud local in Following the Equator</cite>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="section">
+    <div class="section-head" data-reveal="stagger">
+      <div><div class="eyebrow">Experiences</div><h2 class="h2">Three ways <em>in</em></h2></div>
+      <p>Get in the water, head for the hills, or eat your way around the island.</p>
+    </div>
+    <div class="exp3" data-reveal="stagger">
+      <a href="experiences.html#water"><video src="assets/mu/video/reef-fish.mp4" poster="assets/mu/img/v-reef-fish.jpg" muted loop playsinline preload="none" data-autoplay></video><div><div class="eyebrow">Water</div><h3>Under the surface</h3><p>Coral gardens, turtles, sailing to islands.</p></div></a>
+      <a href="experiences.html#nature"><video src="assets/mu/video/waterfall.mp4" poster="assets/mu/img/v-waterfall.jpg" muted loop playsinline preload="none" data-autoplay></video><div><div class="eyebrow">Nature</div><h3>Into the green</h3><p>Peaks, gorges and waterfalls.</p></div></a>
+      <a href="experiences.html#food"><img src="assets/mu/img/street-food.jpg" alt="Street food being fried" loading="lazy"><div><div class="eyebrow">Food &amp; culture</div><h3>Taste the island</h3><p>Dholl puri, markets, temples and sega.</p></div></a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta on-media">
+    <video src="assets/mu/video/dusk.mp4" poster="assets/mu/img/v-dusk.jpg" muted loop playsinline preload="none" data-autoplay></video>
+    <div class="eyebrow">When you're ready</div>
+    <h2 class="h1">Your island <em>is waiting</em></h2>
+    <a href="plan.html" class="btn btn--coral">Plan your trip</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer__top">
+    <div><div class="eyebrow">Moris</div><h2 class="h2" style="margin-top:14px">A love letter <em>to Mauritius</em></h2><p style="margin-top:18px"><span class="live" data-live>Port Louis · <span data-live-time>--:--</span><span class="sep">·</span><span data-live-temp></span></span></p></div>
+    <div><h4>Pages</h4><nav><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="heritage.html">Heritage</a><a href="experiences.html">Experiences</a><a href="plan.html">Plan your trip</a></nav></div>
+    <div><h4>Plan</h4><nav><a href="plan.html#when">When to go</a><a href="plan.html#essentials">Essentials</a><a href="plan.html#itineraries">Itineraries</a><a href="plan.html#planner">Trip planner</a></nav></div>
+  </div>
+  <div class="footer__big">Mauritius</div>
+  <div class="footer__row"><span>© 2026 Moris. An independent, unofficial showcase. Not affiliated with the Government of Mauritius.</span><span>Photos: Unsplash · Footage: Mixkit · Earth: NASA · Coastline: © OpenStreetMap contributors · Weather: Open-Meteo</span></div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal__box" id="modalBox"><button class="modal__close" id="modalClose" aria-label="Close">✕</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/mu-geo.js"></script>
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/home.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module" src="js/gl-intro.js"></script>
+<script type="module" src="js/gl-hero.js"></script>
+<script type="module" src="js/gl-island.js"></script>
+<script type="module" src="js/gl-morph.js"></script>
+<script type="module" src="js/gl-globe.js"></script>
+</body>
+</html>

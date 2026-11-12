@@ -1,0 +1,11 @@
+# old game-style prototype and its assets (not part of the Mauritius site)
+_old-heatwave/
+assets/img/
+assets/video/
+assets/frames/
+
+# local / OS noise
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
