@@ -187,7 +187,7 @@
     const dt = gsap.timeline({ scrollTrigger: { trigger: '#deck', start: 'top top', end: '+=' + (cards.length * 60) + '%', scrub: 0.8, pin: true, anticipatePin: 1,
       onUpdate: s => (count.textContent = String(Math.min(cards.length, 1 + Math.floor(s.progress * cards.length))).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0')) } });
     cards.slice(0, -1).forEach((c, i) => {
-      dt.to(c, { x: (i % 2 ? 1 : -1) * innerWidth * 0.9, y: -innerHeight * 0.25, rotate: (i % 2 ? 1 : -1) * 28, ease: 'power2.in', duration: 1 }, i)
+      dt.to(c, { x: (i % 2 ? 1 : -1) * innerWidth * (innerWidth < 700 ? 1.25 : 0.9), y: -innerHeight * 0.25, rotate: (i % 2 ? 1 : -1) * 28, ease: 'power2.in', duration: 1 }, i)
         .to(cards[i + 1], { rotate: 0, x: 0, y: 0, duration: 0.6, ease: 'power2.out' }, i + 0.45);
     });
     dt.to({}, { duration: 0.6 });

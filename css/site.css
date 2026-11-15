@@ -43,6 +43,7 @@ body{
   font-variation-settings:'opsz' 14;overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
 body.is-loading{overflow:hidden;height:100vh}
+main{overflow-x:clip} /* slide-in reveals must never widen the page on phones */
 img,video,canvas{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}

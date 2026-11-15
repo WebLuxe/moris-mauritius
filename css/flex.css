@@ -5,6 +5,12 @@
    ledger · quote · Heritage page
    ========================================================= */
 
+/* --ub = height of the mobile URL bar. Pinned sections fill the LARGE
+   viewport (100lvh) so no strip opens up when the bar hides on scroll;
+   bottom-anchored content is lifted by --ub so it stays above the bar. */
+:root{--ub:0px}
+@supports (height:100lvh){:root{--ub:calc(100lvh - 100svh)}}
+
 /* ---------- INTRO: orbit dive ---------- */
 .intro{position:fixed;inset:0;z-index:200;background:#020d13;color:#d9fff8;overflow:hidden;
   -webkit-mask:radial-gradient(circle at var(--px,50%) var(--py,50%),transparent var(--hole,0px),#000 calc(var(--hole,0px) + 1px));
@@ -92,7 +98,7 @@
 .ribbons__title span{padding:10px 18px;background:var(--sun);border:2px solid var(--ink);box-shadow:var(--shadow);border-radius:12px;font-family:var(--display);font-weight:800;font-variation-settings:'wdth' 80;font-size:clamp(26px,4vw,58px);letter-spacing:-.03em;text-transform:uppercase;rotate:-3deg}
 
 /* ---------- 3D island ---------- */
-.island3d{position:relative;height:100vh;height:100svh;overflow:hidden;background:#cfe9f0}
+.island3d{position:relative;height:100vh;height:100lvh;overflow:hidden;background:#cfe9f0}
 .island3d canvas{position:absolute;inset:0;width:100%;height:100%}
 .island3d__fallback{position:absolute;inset:0;background:url(../assets/mu/img/underwater-waterfall.jpg) center/cover}
 .island3d.is-gl .island3d__fallback{display:none}
@@ -107,16 +113,16 @@
 .hud__steps{display:flex;gap:6px;justify-content:flex-end;margin-top:6px}
 .hud__steps i{width:26px;height:4px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
 .hud__steps i b{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
-.island3d__cap{position:absolute;left:var(--gutter);bottom:10vh;max-width:min(680px,calc(100% - var(--gutter)*2));color:#fff;opacity:0;visibility:hidden}
+.island3d__cap{position:absolute;left:var(--gutter);bottom:calc(10vh + var(--ub));max-width:min(680px,calc(100% - var(--gutter)*2));color:#fff;opacity:0;visibility:hidden}
 .island3d__cap .h2{margin:14px 0;text-shadow:0 6px 40px rgba(6,45,59,.45)}
 .island3d__cap p{font-size:clamp(15px,1.2vw,18px);line-height:1.6;max-width:42ch;text-shadow:0 2px 18px rgba(6,45,59,.6)}
 .island3d__cap--r{left:auto;right:var(--gutter);text-align:right}
 .island3d__cap--r p{margin-left:auto}
 
 /* ---------- particle morph ---------- */
-.morph{position:relative;height:100vh;height:100svh;overflow:hidden;background-color:#04161f;background-image:var(--grain),radial-gradient(ellipse at 50% 55%,#0b3b50 0%,#04161f 70%);color:#fff}
+.morph{position:relative;height:100vh;height:100lvh;overflow:hidden;background-color:#04161f;background-image:var(--grain),radial-gradient(ellipse at 50% 55%,#0b3b50 0%,#04161f 70%);color:#fff}
 .morph canvas{position:absolute;inset:0;width:100%;height:100%}
-.morph__cap{position:absolute;left:var(--gutter);right:var(--gutter);bottom:8vh;text-align:center;opacity:0;visibility:hidden}
+.morph__cap{position:absolute;left:var(--gutter);right:var(--gutter);bottom:calc(8vh + var(--ub));text-align:center;opacity:0;visibility:hidden}
 .morph__cap .h2{margin-top:12px}
 .morph__cap p{max-width:46ch;margin:12px auto 0;color:rgba(255,255,255,.75);line-height:1.6}
 .morph__idx{position:absolute;top:96px;left:var(--gutter);font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--aqua)}
@@ -124,7 +130,7 @@
 .morph.is-gl .morph__fallback{display:none}
 
 /* ---------- globe ---------- */
-.globe{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:var(--gutter);padding:12vh var(--gutter);background-color:#03121a;background-image:var(--grain);color:#fff;overflow:hidden}
+.globe{position:relative;min-height:100vh;min-height:100lvh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:var(--gutter);padding:12vh var(--gutter);background-color:#03121a;background-image:var(--grain);color:#fff;overflow:hidden}
 .globe__stage{position:relative;aspect-ratio:1;width:100%;max-width:760px;justify-self:center}
 .globe__stage canvas{position:absolute;inset:-8%;width:116%;height:116%}
 .globe__text .h2{margin:16px 0 18px}
@@ -136,7 +142,7 @@
 .route small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:2px}
 
 /* ---------- postcards (pinned deck) ---------- */
-.deck{position:relative;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
+.deck{position:relative;height:100vh;height:100lvh;overflow:hidden;display:grid;place-items:center}
 .deck__head{position:absolute;top:96px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;z-index:20}
 .deck__count{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .pc{position:absolute;width:min(78vw,820px);aspect-ratio:3/2;background:var(--card);border:2px solid var(--ink);border-radius:10px;box-shadow:8px 8px 0 var(--ink);padding:14px;display:grid;grid-template-columns:1.45fr 1fr;gap:14px;will-change:transform}
@@ -188,7 +194,7 @@
 /* =========================================================
    HERITAGE
    ========================================================= */
-.tl{position:relative;height:100vh;height:100svh;overflow:hidden;background-color:var(--deep);background-image:var(--grain);color:#fff}
+.tl{position:relative;height:100vh;height:100lvh;overflow:hidden;background-color:var(--deep);background-image:var(--grain);color:#fff}
 .tl__head{position:absolute;top:12vh;left:var(--gutter);z-index:2}
 .tl__head .h2{margin-top:14px}
 .tl__track{position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;padding:0 var(--gutter) 0 calc(var(--gutter) + 40vw);will-change:transform}
@@ -275,11 +281,13 @@
   .hero__bottom p{font-size:14.5px}
   .ribbon figure{width:58vw}
   .ribbon figure:nth-child(3n){width:40vw}
-  .deck{place-items:end center;padding-bottom:5vh}
+  /* postcards: the stack lives in a fixed slot between the heading and
+     the URL bar (cards are absolute, so deck padding can't hold them) */
+  .deck{display:block}
   .deck__head .h2{font-size:34px}
-  .pc{width:88vw;max-height:66vh;aspect-ratio:auto;grid-template-columns:1fr;padding:10px}
-  .pc__img{max-height:34vh}
-  .pc__img{aspect-ratio:4/3}
+  .pc{left:6vw;width:88vw;top:178px;bottom:calc(58px + var(--ub));aspect-ratio:auto;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;padding:10px}
+  .pc__img{min-height:0}
+  .pc__img img,.pc__img video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .pc__back{border-left:0;border-top:1.5px dashed rgba(15,33,41,.35);padding:12px 4px 4px}
   .pc__back h3{margin-top:0;font-size:30px;padding-right:70px}
   .pc__stamp{top:12px;width:52px;height:62px;font-size:11px}
@@ -301,7 +309,7 @@
 }
 
 /* ---------- THE REEL ---------- */
-.reel{position:relative;height:100vh;height:100svh;overflow:hidden;background:var(--deep);color:#fff}
+.reel{position:relative;height:100vh;height:100lvh;overflow:hidden;background:var(--deep);color:#fff}
 .reel__slide{position:absolute;inset:0;--d:125vmax}
 /* circular window that scales open: transform-only, so the GPU composites it cheaply */
 .reel__mask{position:absolute;left:50%;top:55%;width:var(--d);height:var(--d);margin:calc(var(--d) / -2) 0 0 calc(var(--d) / -2);border-radius:50%;overflow:hidden;will-change:transform;transform:translateZ(0)}
@@ -309,8 +317,8 @@
 .reel__slide::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(6,45,59,0) 30%,rgba(6,45,59,.55) 100%)}
 .reel__word{position:absolute;left:0;right:0;top:50%;translate:0 -50%;z-index:2;text-align:center;font-family:var(--display);font-weight:800;font-variation-settings:'opsz' 96,'wdth' 75;
   font-size:min(24vw,calc(170vw / var(--len,6)));line-height:.8;letter-spacing:-.05em;text-transform:uppercase;color:#fff;will-change:transform,opacity}
-.reel__meta{position:absolute;left:var(--gutter);bottom:5vh;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.reel__count{position:absolute;right:var(--gutter);bottom:5vh;z-index:3;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:6px 10px;border:1.5px solid #fff;border-radius:8px}
+.reel__meta{position:absolute;left:var(--gutter);bottom:calc(5vh + var(--ub));z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.reel__count{position:absolute;right:var(--gutter);bottom:calc(5vh + var(--ub));z-index:3;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:6px 10px;border:1.5px solid #fff;border-radius:8px}
 
 /* ---------- phone layout pass ---------- */
 @media (max-width:700px){
@@ -328,7 +336,7 @@
   .hero__bottom{position:relative;left:auto;right:auto;bottom:auto;padding:0 var(--gutter);flex-direction:column;align-items:flex-start;gap:14px}
   .hero__sticker{top:140px;bottom:auto;right:14px;width:92px;height:92px}
   /* globe fits one screen */
-  .globe{min-height:100svh;padding:84px var(--gutter) 20px;gap:6px;align-content:center}
+  .globe{min-height:100lvh;padding:84px var(--gutter) calc(20px + var(--ub));gap:6px;align-content:center}
   .globe__stage{max-width:66vw}
   .globe__text .h2{font-size:31px;margin:8px 0 4px}
   .globe__text .lede,.globe .note,.route small{display:none}
@@ -347,6 +355,6 @@
   /* bigger media: edge to edge */
   .region__media{margin:0 calc(var(--gutter) * -1);border-radius:0;border-left:0;border-right:0;box-shadow:none}
   .food__img{margin:0 calc(var(--gutter) * -1);border-radius:0;border-left:0;border-right:0;box-shadow:none;aspect-ratio:1}
-  .reel__meta{bottom:10vh}
-  .reel__count{bottom:10vh}
+  .reel__meta{bottom:calc(8vh + var(--ub))}
+  .reel__count{bottom:calc(8vh + var(--ub))}
 }

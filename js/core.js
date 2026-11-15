@@ -78,10 +78,13 @@
     io.observe(el);
   };
 
-  /* ---------------- Mobile video swap ----------------
-     Phones get 640px encodes (~6× smaller). Videos may use data-src
+  /* ---------------- Light video swap ----------------
+     Phones have dense screens (a full-screen clip needs ~1200px+ of
+     source), so every device gets the full encodes. Decoding runs on the
+     hardware video block, not the GPU, so even low-tier phones cope.
+     Only Data Saver users get the 640px encodes. Videos may use data-src
      (hero) or src; both are rewritten before playback starts. */
-  const small = HW.tier === 'low' || innerWidth < 820;
+  const small = !!(navigator.connection && navigator.connection.saveData);
   $$('video').forEach(v => {
     let src = v.getAttribute('data-src') || v.getAttribute('src');
     if (!src) return;
